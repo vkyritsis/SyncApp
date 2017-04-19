@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=620">
+    <title>Dreamtech - Synch your contacts</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dreamtech.css">
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codefile.js"></script>
+
+
+</head>
+<style>
+
+</style>
+
+<body>
+    <section class="container main-container">
+        <section id="loginPage">
+            <div class="">
+                <div class="choiceTextSection">
+                    <span>Dreamtech</span>
+                    <div class="subTitle"> <span class="badge">1</span> Login</div>
+                </div>
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="email">Username:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    </div>
+                    <div class="msg">
+                        <label> </label>
+                    </div>
+                    <button type="button" class="btn btn-default" onclick="generalFunctions.checkNetwork(loginFunctions.login)">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="progressPage" class="hidden">
+            <div class="choiceTextSection">
+                <span>Dreamtech</span>
+                <div class="subTitle"> <span class="badge">2</span> sync your contacts</div>
+            </div>
+
+            <div class="">
+                <div class="progress numberOfContacts">
+                </div>
+                <div class="progress1">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        0%
+                    </div>
+                </div>
+                <br>
+
+
+
+                </p>
+
+                <div class="container-fluid footerOptions">
+                    <div class="row">
+                        <div class="col-xs-6 ">
+                            <a class="btn btn-primary btn-lg hidden " id="stop" href="#" role="button" onclick="syncFunctions.pauseSync();">Stop Sync</a>
+                            <a class="btn btn-primary btn-lg hidden" id="start" href="#" role="button" onclick=" generalFunctions.checkNetwork(syncFunctions.sync,'');">Start Sync</a>
+                            <a class="btn btn-primary btn-lg hidden" id="resume" href="#" role="button" onclick=" generalFunctions.checkNetwork(syncFunctions.resumeSync);">Resume Sync</a>
+
+                        </div>
+                        <div class="col-xs-6 ">
+
+                            <a class="btn btn-primary btn-lg hidden" id="clear" href="#" role="button" onclick=" localDataFunctions.clearLocalData();">Clear Offline Data</a>
+                            <button type="button" id="details" onclick="localDataFunctions.showSavedAccounts()" class="btn btn-info btn-lg hidden" data-toggle="modal" data-target="#myModal">Details</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- Synced Accounts Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Synced Accounts</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+    </section>
+</body>
+
+<script>
+</script>
+
+
+</html>
