@@ -87,7 +87,7 @@
         var pass = $("#pwd").val();
 
         $.ajax({
-            url: "http://mail.dreamtech.gr:36777/DREAMTECH.ORCA/Mobile/Login?login=" + usn + "&password=" + pass + "",
+            url: "",
             type: "POST",
             data: {},
             contentType: 'application/json; charset=utf-8',
@@ -113,7 +113,7 @@
 
     loginFunctions.getTotalContacts = function() {
         $.ajax({
-            url: "http://mail.dreamtech.gr:36777/DREAMTECH.ORCA/Mobile/Account/Sync?bookmark=",
+            url: "",
             type: "GET",
             headers: {
                 'X-ORCA-Token': token
